@@ -13,8 +13,21 @@ code {
 }
 
 .main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
+  max-width: 1200px;
+  padding: 10px 20px;
   height: 100vh;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 5px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ccc;
+  margin: 0 10px;
 }
