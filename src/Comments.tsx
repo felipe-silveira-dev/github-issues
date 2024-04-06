@@ -26,7 +26,7 @@ const Comments = ({ issueNumber }: { issueNumber: number }) => {
     } = useQuery({
         queryKey: ['comments', issueNumber],
         queryFn: fetchComments,
-        staleTime: 600000
+        staleTime: 600000 * 10,
     });
 
     function fetchComments() {

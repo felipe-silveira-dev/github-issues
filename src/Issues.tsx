@@ -14,6 +14,7 @@ type Issue = {
     created_at: string;
     user: {
         login: string;
+        html_url: string;
     };
     comments: number;
 };
@@ -33,7 +34,7 @@ const Issues = () => {
       const { isSuccess: isSuccessIssuesOpen, data: issuesOpen } = useQuery({
         queryKey: ['issuesOpen'],
         queryFn: fetchIssuesOpen,
-        staleTime: 600000
+        staleTime: 600000 * 10,
       });
     
       const { isSuccess: isSuccessIssuesClosed, data: issuesClosed } = useQuery({

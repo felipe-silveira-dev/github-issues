@@ -18,7 +18,7 @@ const Details = () => {
     } = useQuery({
         queryKey: ['issue', params.id], 
         queryFn: fetchIssue,
-        staleTime: 600000
+        staleTime: 600000 * 10, // 100 minutes
     });
   
     function fetchIssue() {
@@ -26,8 +26,6 @@ const Details = () => {
         `https://api.github.com/repos/facebook/create-react-app/issues/${params.id}`
       ).then(response => response.json());
     }
-
-    console.log(issue);
     
     return (
         <div className="comments-container">
